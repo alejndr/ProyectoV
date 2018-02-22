@@ -39,7 +39,7 @@ public class tiradas {
    * @param armasCaC La puntuación en armas cuerpo a cuerpo del personaje.
    * @return El resultado de una tirada para impactar.
    */
-  public static int impacto(int destreza, int armasCaC) {
+  public static int impacto(int destreza, int armasCaC, int dificultadArma) {
 
     int[] arrayDestreza = new int[destreza];
     int[] arrayarmasCaC = new int[armasCaC];
@@ -49,7 +49,7 @@ public class tiradas {
 
     for (int i = 0; i < destreza; i++) {
       arrayDestreza[i] = d10();
-      if (arrayDestreza[i] >= 6) {
+      if (arrayDestreza[i] >= dificultadArma) {
         exitosDestreza++;
       } else if (arrayDestreza[i] == 1) {
         exitosDestreza--;
@@ -59,7 +59,7 @@ public class tiradas {
 
     for (int i = 0; i < armasCaC; i++) {
       arrayarmasCaC[i] = d10();
-      if (arrayarmasCaC[i] >= 6) {
+      if (arrayarmasCaC[i] >= dificultadArma) {
         exitosArmasCaC++;
       } else if (arrayarmasCaC[i] == 1) {
         exitosArmasCaC--;
@@ -70,6 +70,21 @@ public class tiradas {
 
     return impacto;
 
+  }
+  
+  
+  /**
+   * Calcula una tirada de daño: destreza + armas CaC menos un exito
+   *
+   * @param fuerza La puntuación en fuerza del personaje.
+   * @param dañoArma El daño del arma cuerpo a cuerpo del personaje.
+   * @param impacto Los dados que pasan de la tirada de impacto
+   * @return El resultado de una tirada para hacer daño.
+   */
+  public static int daño(int fuerza, int dañoArma, int impacto) {
+  
+  
+  
   }
 
 }

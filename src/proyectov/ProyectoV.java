@@ -26,7 +26,7 @@ public class ProyectoV {
     System.out.println(FuncionesV.impacto(4, 5));*/
 
     for (int i = 0; i < 1000000; i++) {
-      prueba = tiradas.impacto(5, 5);
+      prueba = tiradas.impacto(5, 5, 6);
       if (prueba >= 0) {
         impactoExitoso++;
         mediaimpacto += prueba;
